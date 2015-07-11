@@ -1,0 +1,83 @@
+#Topology for EMULAB
+set ns [new Simulator]
+source tb_compat.tcl
+
+#Nodes
+set adx [$ns node]
+tb-set-node-os $adx UBUNTU12-64-STD
+
+#Sellers
+set seller [$ns node]
+tb-set-node-os $seller UBUNTU12-64-STD
+
+#Bidders
+set bidder1 [$ns node]
+tb-set-node-os $bidder1 UBUNTU12-64-STD
+set bidder2 [$ns node]
+tb-set-node-os $bidder2 UBUNTU12-64-STD
+set bidder3 [$ns node]
+tb-set-node-os $bidder3 UBUNTU12-64-STD
+set bidder4 [$ns node]
+tb-set-node-os $bidder4 UBUNTU12-64-STD
+set bidder5 [$ns node]
+tb-set-node-os $bidder5 UBUNTU12-64-STD
+set bidder6 [$ns node]
+tb-set-node-os $bidder6 UBUNTU12-64-STD
+set bidder7 [$ns node]
+tb-set-node-os $bidder7 UBUNTU12-64-STD
+set bidder8 [$ns node]
+tb-set-node-os $bidder8 UBUNTU12-64-STD
+set bidder9 [$ns node]
+tb-set-node-os $bidder9 UBUNTU12-64-STD
+set bidder10 [$ns node]
+tb-set-node-os $bidder10 UBUNTU12-64-STD
+set bidder11 [$ns node]
+tb-set-node-os $bidder11 UBUNTU12-64-STD
+set bidder12 [$ns node]
+tb-set-node-os $bidder12 UBUNTU12-64-STD
+set bidder13 [$ns node]
+tb-set-node-os $bidder13 UBUNTU12-64-STD
+set bidder14 [$ns node]
+tb-set-node-os $bidder14 UBUNTU12-64-STD
+set bidder15 [$ns node]
+tb-set-node-os $bidder15 UBUNTU12-64-STD
+set bidder16 [$ns node]
+tb-set-node-os $bidder16 UBUNTU12-64-STD
+set bidder17 [$ns node]
+tb-set-node-os $bidder17 UBUNTU12-64-STD
+set bidder18 [$ns node]
+tb-set-node-os $bidder18 UBUNTU12-64-STD
+set bidder19 [$ns node]
+tb-set-node-os $bidder19 UBUNTU12-64-STD
+set bidder20 [$ns node]
+tb-set-node-os $bidder20 UBUNTU12-64-STD
+
+#Lans
+set bidderslink [$ns make-lan "$adx $seller $bidder1 $bidder2 $bidder3 $bidder4 $bidder5 $bidder6 $bidder7 $bidder8 $bidder9 $bidder10 $bidder11 $bidder12 $bidder13 $bidder14 $bidder15 $bidder16 $bidder17 $bidder18 $bidder19 $bidder20" 100Mb 10ms]
+
+#Hardware
+
+tb-set-hardware $adx pc3000
+tb-set-hardware $seller pc3000
+tb-set-hardware $bidder1 pc3000
+tb-set-hardware $bidder2 pc3000
+tb-set-hardware $bidder3 pc3000
+tb-set-hardware $bidder4 pc3000
+tb-set-hardware $bidder5 pc3000
+tb-set-hardware $bidder6 pc3000
+tb-set-hardware $bidder7 pc3000
+tb-set-hardware $bidder8 pc3000
+tb-set-hardware $bidder9 pc3000
+tb-set-hardware $bidder10 pc3000
+tb-set-hardware $bidder11 pc3000
+tb-set-hardware $bidder12 pc3000
+tb-set-hardware $bidder13 pc3000
+tb-set-hardware $bidder14 pc3000
+tb-set-hardware $bidder15 pc3000
+tb-set-hardware $bidder16 pc3000
+tb-set-hardware $bidder17 pc3000
+tb-set-hardware $bidder18 pc3000
+tb-set-hardware $bidder19 pc3000
+tb-set-hardware $bidder20 pc3000
+
+$ns run

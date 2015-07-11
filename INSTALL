@@ -1,0 +1,70 @@
+Instructions for installing VEX on a clean install of Ubuntu Server 14.04.02
+
+(0) Install gcc, make, autoconf, libtool, cmake, ruby, OpenSSL, zlib, 
+    pfm, papi, pcre, yasm, gmp, bison, flex
+
+  $ apt-get install gcc g++ make autoconf libtool cmake ruby openssl zlib1g-dev \
+    libpfm4-dev libpapi-dev libpcre3-dev yasm libgmp-dev bison flex
+
+(1) Download VEX source code
+  $ git clone https://github.com/sga001/vex.git
+
+  # From now on, assume that <VEX_PATH> is the path to VEX's directory
+
+(2) Download and install dependencies
+
+  # create a new folder (anywhere) to store the source files
+
+  $ mkdir ~/deps
+
+  (a) Download and install Google glog
+
+    $ cd ~/deps
+    $ git clone https://github.com/google/glog.git 
+    $ cd glog; 
+    $ ./configure --prefix=<VEX_PATH>/deps/; make; make install
+
+  
+  (c) Download and install MsgPack for C/C++ (it needs to be version 0.5)
+
+    $ cd ~/deps
+    $ git clone https://github.com/msgpack/msgpack-c.git
+    $ cd msgpack-c
+    $ git checkout cpp-0.5; ./bootstrap; ./configure --prefix=<VEX_PATH>/deps/; make; make install
+
+
+  (d) Download and install mpio
+
+    $ cd ~/deps
+    $ git clone https://github.com/frsyuki/mpio.git
+    $ cd mpio 
+    $ ./bootstrap; ./configure --prefix=<VEX_PATH>/deps/; make; make install
+
+  (d) Download and install MsgPack-RPC
+
+    $ cd ~/deps
+    $ git clone https://github.com/msgpack-rpc/mspack-rpc-cpp.git
+    $ cd msgpack-rpc-cpp 
+    $ ./bootstrap; ./configure --prefix=<VEX_PATH>/deps/ --with-msgpack=<VEX_PATH>/deps/ --with-mpio=<VEX_PATH>/deps/; make; make install
+
+
+  (e) Download and install sfslite
+
+    $ cd ~/deps
+    $ git clone https://github.com/okws/sfslite.git
+    $ cd sfslite
+
+    # Remove all the instances of "-Werror" acsfs.m4 (because this library is a pain!)
+
+    $ cp acsfs.m4 acsfs.m4.back; sed "s/-Werror//g" acsfs.m4.back > acsfs.m4
+    $ ./setup; ./configure --prefix=<VEX_PATH>/deps/; make; make install
+
+
+(3) Install VEX
+
+  $ cd <VEX_PATH>/src/
+  $ make
+  $ make install
+
+  # all the binaries are now in VEX_PATH/bin/
+

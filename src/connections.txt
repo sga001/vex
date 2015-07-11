@@ -1,0 +1,6 @@
+# Seller
+localhost,9999
+# Bidders
+localhost,10000
+localhost,10001
+localhost,10002

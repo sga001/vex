@@ -1,0 +1,4 @@
+error*
+logs/*
+out/*
+audit_files/*

@@ -1,0 +1,4 @@
+The chacha and ecrypt files were obtained from http://cr.yp.to/chacha.html
+Chacha is under Public Domain.
+
+PRNG files were borrowed from Ginger (Setty et al.) and modified.
