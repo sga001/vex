@@ -7,12 +7,12 @@ First, install VEX. See INSTALL file for instructions.
 
 Running VEX on a local machine
 
-  (1) To reproduce the experiments in figure 10:
+(1) To reproduce the experiments in figure 10:
 
   run the master script in eval with the -t (throughput) option.
 
-  $ cd eval
-  $ ./master.rb -t
+    $ cd eval
+    $ ./master.rb -t
 
   the logs will be stored in the "logs" folder. These logs will be processed
   automatically by the analyze.rb script. The results will be stored in 
@@ -24,12 +24,12 @@ Running VEX on a local machine
 
 
 
-  (2) To reproduce the experiments in figure 11:
+(2) To reproduce the experiments in figure 11:
 
   run the master script in eval with the -d (delay) option.
 
-  $ cd eval
-  $ ./master.rb -d
+    $ cd eval
+    $ ./master.rb -d
 
   the logs will be stored in the "logs" folder. Like above, these logs
   will be processed automatically by the analye.rb script. Note that only
@@ -45,8 +45,8 @@ Running VEX on a local machine
 
   run the master script in eval with the -a (audit) option.
 
-  $ cd eval
-  $ ./master.rb -a
+    $ cd eval
+    $ ./master.rb -a
 
   The results will be json files in the "results" folder.
 
@@ -58,7 +58,7 @@ Running VEX on Emulab
 
 
   (2) Create the desired emulab network topology. A sample file is
-    included (see 10-bidders.ns). 
+      included (see 10-bidders.ns). 
 
   (3) Create a connections.txt file with the following format:
 
@@ -67,9 +67,9 @@ Running VEX on Emulab
     Bidder 2 IP,Port
 
 
-    A sample file is found in src/connections.txt
+  A sample file is found in src/connections.txt
 
   (4) Follow the instructions in running VEX for local machine, but also pass in the
       -e (emulab) flag. 
 
-      Note that the logs and result folders will be on emulab (not on the local machine).
+  Note that the logs and result folders will be on emulab (not on the local machine).
